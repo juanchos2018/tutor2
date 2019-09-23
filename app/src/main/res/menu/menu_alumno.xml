@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/idcursos"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="Cursos" />
+
+    <item
+        android:id="@+id/idtutores"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="Tutores" />
+
+    <item
+        android:id="@+id/idnotification"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="Notificaciones" />
+
+</menu>

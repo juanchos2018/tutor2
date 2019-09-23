@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.RegistrarTutorFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/idcodigoestudiante"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Codigo Tutor"
+            android:drawableLeft="@drawable/code"
+            android:paddingLeft="8dp"
+            android:paddingRight="12dp"
+            android:drawablePadding="15dp"
+            android:background="@drawable/input2"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+            />
+
+        <EditText
+            android:id="@+id/idnombreestudiante"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Nombre Tutor"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/user3"
+            android:paddingLeft="4dp"
+            android:paddingRight="10dp"
+            android:drawablePadding="15dp"
+            android:background="@drawable/input2"/>
+
+        <EditText
+            android:id="@+id/idapellidoestudiante"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Apellido Tutor"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/user3"
+            android:paddingLeft="8dp"
+            android:paddingRight="12dp"
+            android:drawablePadding="15dp"
+            android:background="@drawable/input2"/>
+        <Spinner
+            android:id="@+id/idcursoss"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/spinner1"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+
+            >
+
+        </Spinner>
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="bottom">
+
+        <Button
+            android:id="@+id/idbtnagregar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginRight="20dp"
+            android:text="Registrar"
+
+            />
+            </LinearLayout>
+
+
+</FrameLayout>
