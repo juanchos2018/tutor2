@@ -15,30 +15,36 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="Nombre Evento"
             android:textSize="20dp"
+            android:paddingLeft="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="20dp"
+            android:background="@drawable/input3"
             />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="Lugar Evento"
             android:textSize="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
             android:layout_marginRight="10dp"
+            android:background="@drawable/input3"
             />
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:text="Fecha Evento"
             android:textSize="20dp"
+            android:paddingLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:background="@drawable/input3"
             />
         <EditText
             android:id="@+id/editText1"
@@ -51,6 +57,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:background="@drawable/imputarea"
             android:maxLines="15" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

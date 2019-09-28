@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Admin.AgregarAlumno"></activity>
+        <activity android:name=".Alumno.DetalleTutor"></activity>
+        <activity
+            android:name=".Tutor.InicioTutor"
+            android:label="@string/title_activity_inicio_tutor" />
+        <activity android:name=".Admin.VerCursos" />
+        <activity android:name=".Admin.AgregarAlumno" />
         <activity android:name=".Admin.DetalleNotificacion" />
         <activity
             android:name=".Admin.AgregarCurso"

@@ -1,6 +1,7 @@
 package com.example.tutor2.Admin;
 
 import android.content.DialogInterface;
+import android.media.Image;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -13,6 +14,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -35,6 +37,8 @@ public class AgregarCurso extends AppCompatActivity {
 
     TextView txtcode,txtname;
     ListView lisview;
+    ImageView img;
+
     private ArrayList<String> liscursos;
     private ArrayAdapter adaperliscursos;
     private static final String[] ciclos = new String []{"1er Ciclo","2do Ciclo","3er Ciclo","4 Ciclo"};
@@ -45,14 +49,18 @@ public class AgregarCurso extends AppCompatActivity {
         setContentView(R.layout.activity_agregar_curso);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         txtname=(TextView)findViewById(R.id.idnombrestutor);
+        img=(ImageView)findViewById(R.id.idfototutor);
 
         txtcode=(TextView)findViewById(R.id.codigotutor);
         String dato=getIntent().getStringExtra("code" );
         String dato2=getIntent().getStringExtra("name" );
         txtcode.setText(dato);
         txtname.setText(dato2);
-
+        Bundle bundle = this.getIntent().getExtras();
+        int fo = bundle.getInt("foto");
+      img.setImageResource(fo);
 
         lisview=(ListView)findViewById(R.id.idlisviewlista1);
         liscursos= new ArrayList<String>();

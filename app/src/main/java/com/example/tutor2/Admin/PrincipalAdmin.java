@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.tutor2.Clases.Notificacion;
 import com.example.tutor2.Clases.personaje;
-import com.example.tutor2.Fragments.DetalleTutoresFragments;
+import com.example.tutor2.Fragments.FragmentAgregar;
 import com.example.tutor2.Fragments.ListaTutorFragment;
 import com.example.tutor2.Fragments.NotificacionFragment;
 import com.example.tutor2.Fragments.RegistrarTutorFragment;
@@ -24,7 +24,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
-public class PrincipalAdmin extends AppCompatActivity implements RegistrarTutorFragment.OnFragmentInteractionListener,ListaTutorFragment.OnFragmentInteractionListener,NotificacionFragment.OnFragmentInteractionListener, Icomunica1,DetalleTutoresFragments.OnFragmentInteractionListener, Icomunica2 {
+public class PrincipalAdmin extends AppCompatActivity implements RegistrarTutorFragment.OnFragmentInteractionListener,ListaTutorFragment.OnFragmentInteractionListener,NotificacionFragment.OnFragmentInteractionListener, FragmentAgregar.OnFragmentInteractionListener, Icomunica1, Icomunica2 {
 
 
 
@@ -55,7 +55,7 @@ public class PrincipalAdmin extends AppCompatActivity implements RegistrarTutorF
                     getSupportFragmentManager().beginTransaction().replace(R.id.idcontainerfragment,fragment1).commit();
                    return true;
                 case R.id.navigation_notifications:
-                    NotificacionFragment fragment2 = new NotificacionFragment();
+                    FragmentAgregar fragment2 = new FragmentAgregar();
 
                     Cargar(fragment2,fragmentManager);
                     return true;
@@ -72,7 +72,7 @@ public class PrincipalAdmin extends AppCompatActivity implements RegistrarTutorF
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         fragmentManager = getSupportFragmentManager();
 
-        RegistrarTutorFragment fragment = new RegistrarTutorFragment();
+        ListaTutorFragment fragment = new ListaTutorFragment();
 
       //  Cargar(R.id.idcontainerfragment,fragmentManager);
         getSupportFragmentManager().beginTransaction().replace(R.id.idcontainerfragment,fragment).commit();
@@ -94,12 +94,12 @@ public class PrincipalAdmin extends AppCompatActivity implements RegistrarTutorF
 
     @Override
     public void EnviarDetalle(personaje per) {
-        DetalleTutoresFragments curso = new DetalleTutoresFragments();
+//        DetalleTutoresFragments curso = new DetalleTutoresFragments();
 
       //  Bundle  bundle= new Bundle();
         //bundle.putString("codio",);
       //  Toast.makeText(this, "llego aqui", Toast.LENGTH_SHORT).show();
-       getSupportFragmentManager().beginTransaction().replace(R.id.idcontainerfragment,curso).commit();
+    //   getSupportFragmentManager().beginTransaction().replace(R.id.idcontainerfragment,curso).commit();
     }
 
     @Override

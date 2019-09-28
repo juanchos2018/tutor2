@@ -29,7 +29,7 @@ public class AgregarAlumno extends AppCompatActivity {
         Ciclo.add("2 Ciclo");
         Ciclo.add("3 Ciclo");
         spinnerciclo=findViewById(R.id.spinner);
-        spinnercursos=findViewById(R.id.spinner2);
+       // spinnercursos=findViewById(R.id.spinner2);
 
         adapterciclo= new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,Ciclo);
     //    adaperspinner= new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,Cursos);

@@ -29,6 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.tutor2.Admin.AgregarAlumno;
 import com.example.tutor2.Admin.AgregarCurso;
+import com.example.tutor2.Admin.VerCursos;
 import com.example.tutor2.Alumno.Principal;
 import com.example.tutor2.Clases.personaje;
 import com.example.tutor2.EjecutaDialog;
@@ -48,8 +49,8 @@ public class perosonajeadapter extends RecyclerView.Adapter<perosonajeadapter.Vi
     ArrayAdapter<String> adaperspinner2;
     //private ExampleDialogListener listener;
 
-    public static ArrayList<String> Cursos;
-    public static ArrayAdapter<String> adapter;
+     ArrayList<String> Cursos;
+     ArrayAdapter<String> adapter;
 
     private View.OnClickListener listener;
 
@@ -72,24 +73,33 @@ public class perosonajeadapter extends RecyclerView.Adapter<perosonajeadapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolderDatos holder, final int position) {
+      /*  holder.codigo.setText(listaPersonaje.get(position).getCodigo());
+        holder.nombre.setText(listaPersonaje.get(position).getNombre());
+        holder.ape.setText(listaPersonaje.get(position).getApellido());*/
+
+
 
         if (holder instanceof ViewHolderDatos){
-          //  final Dato dato=
+            //  final Dato dato=
             final ViewHolderDatos datgolder =(ViewHolderDatos)holder;
             datgolder.codigo.setText(listaPersonaje.get(position).getCodigo());
             datgolder.nombre.setText(listaPersonaje.get(position).getNombre());
-            datgolder.foto.setImageResource(listaPersonaje.get(position).getFoto());
+
+            datgolder.apellidos=listaPersonaje.get(position).getApellido();
+            datgolder.telefonos=listaPersonaje.get(position).getTelefono();
+
+            // datgolder.foto.setImageResource(listaPersonaje.get(position).getFoto());
 
             datgolder.btnprueba.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                 //   Toast.makeText(null, "hola", Toast.LENGTH_SHORT).show();
-                  //   Intent intent= new Intent(datgolder.btnprueba.getContext(), Login.class);
+                    //   Toast.makeText(null, "hola", Toast.LENGTH_SHORT).show();
+                    //   Intent intent= new Intent(datgolder.btnprueba.getContext(), Login.class);
                     // datgolder.btnprueba.getContext().startActivity(intent);
 
 
-                   final  Button b1 = new Button(datgolder.btnprueba.getContext());
-                   b1.setText("boton1");
+                    final  Button b1 = new Button(datgolder.btnprueba.getContext());
+                    b1.setText("boton1");
                     final  Button b2 = new Button(datgolder.btnprueba.getContext());
                     b2.setText("boton 2");
 
@@ -100,38 +110,43 @@ public class perosonajeadapter extends RecyclerView.Adapter<perosonajeadapter.Vi
                     dialog.setCancelable(false);
                     items[0] = "Asignar Curso";
                     items[1] = "Asignar Alumnos";
-                    items[2] = "Banano";
+                    items[2] = "Ver Cursos";
                     //dialog.setItems(items);
                     dialog.setTitle("Acciones").setItems(items, new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 
-                                 //   Toast.makeText( datgolder.btnprueba.getContext(),"Seleccionaste:" + items[which],Toast.LENGTH_SHORT)
-                                   //         .show();
-                                    if (which==0){
-                                        Intent intent= new Intent(datgolder.btnprueba.getContext(), AgregarCurso.class);
-                                      //  intent.putExtra("codigo",datgolder.codigo.getText());
-                                        //intent.putExtra("name",datgolder.nombre.getText());
-                                        //intent.putExtra("foto",datgolder.fo);
-                                        int img;
-                                        ImageView g;
+                            //   Toast.makeText( datgolder.btnprueba.getContext(),"Seleccionaste:" + items[which],Toast.LENGTH_SHORT)
+                            //         .show();
+                            if (which==0){
+                                Intent intent= new Intent(datgolder.btnprueba.getContext(), AgregarCurso.class);
+                                //  intent.putExtra("codigo",datgolder.codigo.getText());
+                                //intent.putExtra("name",datgolder.nombre.getText());
+                                //intent.putExtra("foto",datgolder.fo);
+                                int img;
+                                ImageView g;
 
 
-                                        Bundle bundle = new Bundle();
-                                        bundle.putString("code",datgolder.codigo.getText().toString());
-                                        bundle.putString("name",datgolder.nombre.getText().toString());
-                                       // bundle.putInt("foto",Integer.parseInt(listaPersonaje.get(position).getFoto()));
-                                        intent.putExtras(bundle);
-                                        datgolder.btnprueba.getContext().startActivity(intent);
-                                      //  datgolder.btnprueba.getContext().startActivity(intent);
-                                    }
-                                    if (which==1){
-                                        Intent intent= new Intent(datgolder.btnprueba.getContext(), AgregarAlumno.class);
-                                        datgolder.btnprueba.getContext().startActivity(intent);
-                                    }
+                                Bundle bundle = new Bundle();
+                                img=listaPersonaje.get(position).getFoto();
+                                bundle.putString("code",datgolder.codigo.getText().toString());
+                                bundle.putString("name",datgolder.nombre.getText().toString());
+                                bundle.putInt("foto",img);
+                                intent.putExtras(bundle);
+                                datgolder.btnprueba.getContext().startActivity(intent);
+                                //  datgolder.btnprueba.getContext().startActivity(intent);
+                            }
+                            if (which==1){
+                                Intent intent= new Intent(datgolder.btnprueba.getContext(), AgregarAlumno.class);
+                                datgolder.btnprueba.getContext().startActivity(intent);
+                            }
+                            if (which==2){
+                                Intent intent= new Intent(datgolder.btnprueba.getContext(), VerCursos.class);
+                                datgolder.btnprueba.getContext().startActivity(intent);
+                            }
 
-                                }
-                            });
+                        }
+                    });
                    /* dialog.setPositiveButton("Confirmar", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialogo1, int id) {
 
@@ -163,19 +178,29 @@ public class perosonajeadapter extends RecyclerView.Adapter<perosonajeadapter.Vi
         }
     }
     public class ViewHolderDatos extends RecyclerView.ViewHolder {
-                TextView codigo,nombre;
+                TextView codigo,nombre,ape,telefono;
                 ImageView foto;
                 Button btnprueba;
-
+        String telefonos,apellidos,codigos;
             public ViewHolderDatos(@NonNull View itemView) {
                 super(itemView);
 
                 codigo=(TextView)itemView.findViewById(R.id.idcodigo);
                 nombre=(TextView)itemView.findViewById(R.id.idnombre);
-                foto=(ImageView)itemView.findViewById(R.id.idfoto);
-                btnprueba=(Button)itemView.findViewById(R.id.btbclick);
+              //   ape=(TextView)itemView.findViewById(R.id.idappp);
+
+
+              //  telefono=(TextView)itemView.findViewById(R.id.idtelefono);
+          //      foto=(ImageView)itemView.findViewById(R.id.idfoto);
+              btnprueba=(Button)itemView.findViewById(R.id.btbclick);
 
 
             }
         }
+    public void filterList(ArrayList<personaje> filterdNames) {
+  /*      TextView codigo,nombre;
+        nombre=(TextView)filterdNames.findViewById(R.id.idnombre);
+        no = filterdNames;
+        notifyDataSetChanged();*/
+    }
 }

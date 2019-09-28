@@ -1,4 +1,4 @@
-package com.example.tutor2.Fragments;
+package com.example.tutor2.FragmentAlumno;
 
 import android.content.Context;
 import android.net.Uri;
@@ -12,8 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.tutor2.Adaptador.CursoAdapter;
-import com.example.tutor2.Clases.Cursos;
+import com.example.tutor2.AdapterAlumno.CursoAdapter;
+import com.example.tutor2.ClasesAlumno.Cursos;
 import com.example.tutor2.R;
 
 import java.util.ArrayList;
@@ -38,7 +38,7 @@ public class CursosFragments extends Fragment {
 
 
 
-    RecyclerView recyclerCursos;
+        RecyclerView recyclerCursos;
     ArrayList<Cursos> listaCursos;
 
     private OnFragmentInteractionListener mListener;
@@ -91,6 +91,7 @@ public class CursosFragments extends Fragment {
         listaCursos.add(new Cursos("CU-123","programacion 1",R.drawable.matematica));
         listaCursos.add(new Cursos("CU-124","programacion 2",R.drawable.matematica));
         listaCursos.add(new Cursos("CU-125","programacion 3",R.drawable.matematica));
+
         //listaCursos.add(new Cursos(R.drawable.programacion_1,"Programacion",1));
 
 

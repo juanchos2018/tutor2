@@ -3,13 +3,8 @@ package com.example.tutor2.Alumno;
 import android.net.Uri;
 import android.os.Bundle;
 
-import com.example.tutor2.Clases.personaje;
-import com.example.tutor2.Fragments.CursosFragments;
-import com.example.tutor2.Fragments.DetalleTutoresFragments;
-import com.example.tutor2.Fragments.ListaTutorFragment;
-import com.example.tutor2.Fragments.RegistrarTutorFragment;
-import com.example.tutor2.Fragments.TutoresFragments;
-import com.example.tutor2.Interfaces.Icomunica1;
+import com.example.tutor2.FragmentAlumno.CursosFragments;
+import com.example.tutor2.FragmentAlumno.TutoresFragments;
 import com.example.tutor2.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 

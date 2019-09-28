@@ -41,7 +41,7 @@ public class NotificacionFragment extends Fragment {
     RecyclerView recycler;
    Icomunica2 icomunica2;
 
-    public static ArrayList<Notificacion> listaNotificacion;
+     ArrayList<Notificacion> listaNotificacion;
     private OnFragmentInteractionListener mListener;
 
     public NotificacionFragment() {
@@ -102,9 +102,9 @@ public class NotificacionFragment extends Fragment {
     }
 
     private void LlenarLista() {
-      //  holder.codigocurso.setText(listanotificacion.get(position).getNombrecurso());
-       // holder.nombreestrudiante.setText(listanotificacion.get(position).getNombreestudainte());
-        listaNotificacion.add(new Notificacion("programacion","Pepito"));
+        listaNotificacion.add(new Notificacion("Soluciones Moviels","Vago 2"));
+        listaNotificacion.add(new Notificacion("programacion","Andres"));
+
         listaNotificacion.add(new Notificacion("Soluciones Moviels","Vago 2"));
 
 

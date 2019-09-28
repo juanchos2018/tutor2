@@ -1,19 +1,26 @@
-package com.example.tutor2.Fragments;
+package com.example.tutor2.FragmentAlumno;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
+import com.example.tutor2.AdapterAlumno.TutoresAdapter;
+import com.example.tutor2.ClasesAlumno.Tutores;
 import com.example.tutor2.R;
 
+import java.util.ArrayList;
 
-public class DetalleTutoresFragments extends Fragment {
+
+public class TutoresFragments extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -22,10 +29,13 @@ public class DetalleTutoresFragments extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
     private OnFragmentInteractionListener mListener;
 
-    public DetalleTutoresFragments() {
+    ArrayList<Tutores> listatutores;
+    RecyclerView recyclertutores;
+
+
+    public TutoresFragments() {
         // Required empty public constructor
     }
 
@@ -35,11 +45,11 @@ public class DetalleTutoresFragments extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DetalleTutoresFragments.
+     * @return A new instance of fragment TutoresFragments.
      */
     // TODO: Rename and change types and number of parameters
-    public static DetalleTutoresFragments newInstance(String param1, String param2) {
-        DetalleTutoresFragments fragment = new DetalleTutoresFragments();
+    public static TutoresFragments newInstance(String param1, String param2) {
+        TutoresFragments fragment = new TutoresFragments();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,8 +69,23 @@ public class DetalleTutoresFragments extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detalle_tutores_fragments, container, false);
+       View vista=inflater.inflate(R.layout.fragment_tutores_fragments, container, false);
+       listatutores=new ArrayList<>();
+       recyclertutores=(RecyclerView)vista.findViewById(R.id.recyclerId2);
+       recyclertutores.setLayoutManager(new LinearLayoutManager(getContext()));
+       llenarLista();
+        TutoresAdapter adapter= new TutoresAdapter(listatutores);
+        recyclertutores.setAdapter(adapter);
+
+        return  vista;
+    }
+
+    private void llenarLista() {
+
+        listatutores.add(new Tutores("2014049452","juan carlos panty",R.drawable.bart));
+        listatutores.add(new Tutores("2014043452","jose espinoza",R.drawable.lisa));
+        listatutores.add(new Tutores("2014042452","andres calamaro",R.drawable.homero));
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

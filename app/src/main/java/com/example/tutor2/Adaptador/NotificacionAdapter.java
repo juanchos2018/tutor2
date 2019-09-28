@@ -9,7 +9,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tutor2.Clases.Cursos;
 import com.example.tutor2.Clases.Notificacion;
 import com.example.tutor2.R;
 

@@ -9,17 +9,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/fondosindetalle">
         <EditText
             android:id="@+id/idcodigoestudiante"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="Codigo Tutor"
-            android:drawableLeft="@drawable/code"
+            android:drawableLeft="@drawable/code1"
             android:paddingLeft="8dp"
             android:paddingRight="12dp"
+            android:alpha="0.78"
             android:drawablePadding="15dp"
-            android:background="@drawable/input2"
+            android:background="@drawable/input4"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
@@ -31,14 +33,16 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:hint="Nombre Tutor"
+            android:alpha="0.80"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
-            android:drawableLeft="@drawable/user3"
+
+            android:drawableLeft="@drawable/user2"
             android:paddingLeft="4dp"
             android:paddingRight="10dp"
             android:drawablePadding="15dp"
-            android:background="@drawable/input2"/>
+            android:background="@drawable/input4"/>
 
         <EditText
             android:id="@+id/idapellidoestudiante"
@@ -46,28 +50,30 @@
             android:layout_height="40dp"
             android:hint="Apellido Tutor"
             android:layout_marginLeft="20dp"
+            android:alpha="0.78"
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
-            android:drawableLeft="@drawable/user3"
+            android:drawableLeft="@drawable/user2"
             android:paddingLeft="8dp"
             android:paddingRight="12dp"
             android:drawablePadding="15dp"
-            android:background="@drawable/input2"/>
+            android:background="@drawable/input4"/>
         <Spinner
             android:id="@+id/idcursoss"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/spinner1"
+
+            android:drawableLeft="@drawable/user2"
+            android:paddingLeft="8dp"
+            android:alpha="0.78"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:background="@drawable/input4"
 
             >
 
         </Spinner>
-
-
-
 
     </LinearLayout>
 
@@ -84,8 +90,11 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="100dp"
+            android:background="@drawable/bordeboton5"
             android:layout_marginRight="20dp"
+            android:textColor="@color/white"
             android:text="Registrar"
+            android:layout_marginBottom="10dp"
 
             />
             </LinearLayout>

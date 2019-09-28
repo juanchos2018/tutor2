@@ -1,4 +1,4 @@
-package com.example.tutor2.Clases;
+package com.example.tutor2.ClasesAlumno;
 
 public class Cursos {
 

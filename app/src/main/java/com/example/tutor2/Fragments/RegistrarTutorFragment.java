@@ -78,6 +78,7 @@ Button btagregar;
         spinnerciclo.setAdapter(adapterciclo);
 
         etcodigo=(EditText)vista.findViewById(R.id.idcodigoestudiante);
+      //  etcodigo.getBackground().setAlpha(51);
         etnombre=(EditText)vista.findViewById(R.id.idnombreestudiante);
         btagregar=(Button)vista.findViewById(R.id.idbtnagregar);
         btagregar.setOnClickListener(new View.OnClickListener() {

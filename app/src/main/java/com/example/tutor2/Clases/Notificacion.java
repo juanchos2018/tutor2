@@ -3,9 +3,9 @@ package com.example.tutor2.Clases;
 import java.io.Serializable;
 
 public class Notificacion   implements Serializable {
-    private String nombrecurso;
-    private String nombreestudainte;
-    private String codigoestudiante;
+        private String nombrecurso;
+        private String nombreestudainte;
+        private String codigoestudiante;
 
 
     private String fecha;

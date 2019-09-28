@@ -1,76 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Admin.AgregarAlumno">
 
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="308dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/fondosindetalle">
+        <EditText
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="332dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="56dp"
-        android:ems="10"
-        android:hint="Codigo Alumno"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Codigo Alumno"
+            android:drawableLeft="@drawable/code1"
+            android:paddingLeft="8dp"
+            android:paddingRight="12dp"
+            android:alpha="0.78"
+            android:drawablePadding="15dp"
+            android:background="@drawable/input4"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="316dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Nombre alumno"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+            />
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="316dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Apellido  Alumno"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2" />
+        <EditText
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="308dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="72dp"
-        tools:listitem="Primer Ciclo|sdfdsf"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Nombre Alumno"
+            android:alpha="0.80"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText3" />
+            android:drawableLeft="@drawable/user2"
+            android:paddingLeft="4dp"
+            android:paddingRight="10dp"
+            android:drawablePadding="15dp"
+            android:background="@drawable/input4"/>
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="306dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="48dp"
-        android:text="Registrar Alumno"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner2" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <EditText
+
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:hint="Apellido Alumno"
+            android:layout_marginLeft="20dp"
+            android:alpha="0.78"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:drawableLeft="@drawable/user2"
+            android:paddingLeft="8dp"
+            android:paddingRight="12dp"
+            android:drawablePadding="15dp"
+            android:background="@drawable/input4"/>
+        <Spinner
+
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+
+            android:drawableLeft="@drawable/user2"
+            android:paddingLeft="8dp"
+            android:alpha="0.78"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/input4"
+
+            >
+
+        </Spinner>
+        <Spinner
+
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+
+            android:drawableLeft="@drawable/user2"
+            android:paddingLeft="8dp"
+            android:alpha="0.78"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/input4"
+
+            >
+
+        </Spinner>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+           android:gravity="bottom"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/idbtnagregar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/bordeboton5"
+                android:text="Registrar"
+                android:textColor="@color/white"
+
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

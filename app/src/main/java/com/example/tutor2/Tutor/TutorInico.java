@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.tutor2.R;
 
@@ -22,14 +23,14 @@ public class TutorInico extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutor_inico);
 
-        Drawable originalDrawable = getResources().getDrawable(R.drawable.ico1_1);
+      /*  Drawable originalDrawable = getResources().getDrawable(R.drawable.ico1_1);
         Bitmap oriBitmap =((BitmapDrawable)originalDrawable).getBitmap();
 
         RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(getResources(),oriBitmap);
 
         roundedBitmapDrawable.setCornerRadius(oriBitmap.getHeight());
         ImageView imageView =(ImageView)findViewById(R.id.idimage);
-        imageView.setImageDrawable(roundedBitmapDrawable);
+        imageView.setImageDrawable(roundedBitmapDrawable);*/
 
     }
 
@@ -37,8 +38,9 @@ public class TutorInico extends AppCompatActivity {
 
         switch (view.getId()){
             case R.id.idcar1:
-
-                startActivity(new Intent(TutorInico.this,Evento.class));
+             //   this.deleteDatabase("bd_datos");
+           //     Toast.makeText(this, "hola  ", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(TutorInico.this,InicioTutor.class));
                 break;
 
         }

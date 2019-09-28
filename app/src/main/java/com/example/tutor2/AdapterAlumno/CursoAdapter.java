@@ -1,4 +1,4 @@
-package com.example.tutor2.Adaptador;
+package com.example.tutor2.AdapterAlumno;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tutor2.Clases.Cursos;
+import com.example.tutor2.ClasesAlumno.Cursos;
 import com.example.tutor2.R;
 
 import java.util.ArrayList;
