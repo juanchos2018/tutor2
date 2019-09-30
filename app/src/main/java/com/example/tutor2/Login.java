@@ -47,6 +47,9 @@ public class Login extends AppCompatActivity {
         });
 
     }
+    public  void  nada(){
+
+    }
     public void cambiarEstado(View view) {
 
         switch (view.getId()){
