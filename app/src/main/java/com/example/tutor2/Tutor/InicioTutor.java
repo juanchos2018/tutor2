@@ -3,6 +3,7 @@ package com.example.tutor2.Tutor;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.example.tutor2.FragmentTutor.Cursos_Tutores_Fragment;
 import com.example.tutor2.FragmentTutor.Eventos_Fragment;
 import com.example.tutor2.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -15,10 +16,11 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class InicioTutor extends AppCompatActivity implements Eventos_Fragment.OnFragmentInteractionListener {
+public class InicioTutor extends AppCompatActivity implements Eventos_Fragment.OnFragmentInteractionListener, Cursos_Tutores_Fragment.OnFragmentInteractionListener {
 
-
+String dato;
     private FragmentManager fragmentManager;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -29,9 +31,19 @@ public class InicioTutor extends AppCompatActivity implements Eventos_Fragment.O
             switch (item.getItemId()) {
                 case R.id.eventos:
                     Eventos_Fragment eventos = new Eventos_Fragment();
+
+                    Bundle bundle = getIntent().getExtras();
+                    String texto = bundle.getString("code4");
+                    Bundle args = new Bundle();
+                    args.putString("code41", texto);
+                    eventos.setArguments(args);
+
                     Cargar(eventos,fragmentManager);
                     return true;
                 case R.id.otro1:
+                    Cursos_Tutores_Fragment cursos  = new Cursos_Tutores_Fragment();
+                    Cargar(cursos,fragmentManager);
+
 
                     return true;
                 case R.id.otro2:
@@ -48,8 +60,17 @@ public class InicioTutor extends AppCompatActivity implements Eventos_Fragment.O
         setContentView(R.layout.activity_inicio_tutor);
         BottomNavigationView navView = findViewById(R.id.nav_view1);
         fragmentManager = getSupportFragmentManager();
-
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        Bundle bundle = getIntent().getExtras();
+
+        String texto = bundle.getString("code4");
+        Bundle args = new Bundle();
+        args.putString("code41", texto);
+
+
+        Eventos_Fragment fragment = new Eventos_Fragment();
+        fragment.setArguments(args);
+        getSupportFragmentManager().beginTransaction().replace(R.id.idcontainerfragment2,fragment).commit();
     }
 
     public void Cargar(Fragment f1, FragmentManager fm){

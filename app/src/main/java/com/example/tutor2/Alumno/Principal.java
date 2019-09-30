@@ -3,8 +3,12 @@ package com.example.tutor2.Alumno;
 import android.net.Uri;
 import android.os.Bundle;
 
+import com.example.tutor2.FragmentAlumno.ContenedorFragment;
 import com.example.tutor2.FragmentAlumno.CursosFragments;
+import com.example.tutor2.FragmentAlumno.InformacionFragment;
+import com.example.tutor2.FragmentAlumno.PerfilAlumnoFragment;
 import com.example.tutor2.FragmentAlumno.TutoresFragments;
+import com.example.tutor2.Fragments.NotificacionFragment;
 import com.example.tutor2.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -17,7 +21,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class Principal extends AppCompatActivity implements CursosFragments.OnFragmentInteractionListener, TutoresFragments.OnFragmentInteractionListener{
+public class Principal extends AppCompatActivity implements CursosFragments.OnFragmentInteractionListener, TutoresFragments.OnFragmentInteractionListener, PerfilAlumnoFragment.OnFragmentInteractionListener, ContenedorFragment.OnFragmentInteractionListener, InformacionFragment.OnFragmentInteractionListener {
     private TextView mTextMessage;
 
 
@@ -27,22 +31,25 @@ public class Principal extends AppCompatActivity implements CursosFragments.OnFr
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
             switch (item.getItemId()) {
                 case R.id.idcursos:
-                    CursosFragments fragment = new CursosFragments();
-
+             //       CursosFragments fragment = new CursosFragments();
+                    PerfilAlumnoFragment fragment = new PerfilAlumnoFragment();
                    Cargar(fragment,fragmentManager);
                     return true;
                 case R.id.idtutores:
                     TutoresFragments fragment1 = new TutoresFragments();
                    Cargar(fragment1,fragmentManager);
 
-                //    CursosFragments curso = new CursosFragments();
-                 //   getSupportFragmentManager().beginTransaction().replace(R.id.idcontainerfragment2,fragment1).commit();
+
 
                     return true;
                 case R.id.idnotification:
-
+                 // fragment2 = new TutoresFragments();
+               //     NotificacionFragment  fragment2= new NotificacionFragment();
+                 //   Cargar(fragment2,fragmentManager);
+                //    getSupportFragmentManager().beginTransaction().replace(R.id.conte_main,fragment2).commit();
                     return true;
             }
             return false;
@@ -53,12 +60,14 @@ public class Principal extends AppCompatActivity implements CursosFragments.OnFr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_principal);
+
+
         BottomNavigationView navView = findViewById(R.id.nav_view2);
 
-        navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+     navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         fragmentManager = getSupportFragmentManager();
-        CursosFragments curso = new CursosFragments();
-        getSupportFragmentManager().beginTransaction().replace(R.id.idcontainerfragment2,curso).commit();
+        PerfilAlumnoFragment curso = new PerfilAlumnoFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.idcontainerfragment3,curso).commit();
 
 
     }
@@ -69,7 +78,7 @@ public class Principal extends AppCompatActivity implements CursosFragments.OnFr
     }
     public void Cargar(Fragment f1, FragmentManager fm){
         FragmentTransaction ft= fm.beginTransaction();
-        ft.replace(R.id.idcontainerfragment2,f1).commit();
+        ft.replace(R.id.idcontainerfragment3,f1).commit();
 
     }
 

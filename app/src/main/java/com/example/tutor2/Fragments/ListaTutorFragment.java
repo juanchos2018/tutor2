@@ -61,14 +61,15 @@ public class ListaTutorFragment extends Fragment  {
     Activity activity;
     Button btnabrir;
     RecyclerView recycler;
-   ArrayList<personaje> listaPersonaje;
+
     Icomunica1 interfas;
     ImageButton img;
         Button btn;
 
         EditText e1,e2,e3,e4;
         EditText ee1,ee2,ee3,ee4,eciclo;
-    ConexionSQLiteHelper conn;
+        ConexionSQLiteHelper conn;
+    ArrayList<personaje> listaPersonaje;
     perosonajeadapter adapter;
 
     Spinner spinerciclo,spinerciclo1;
@@ -120,8 +121,10 @@ public class ListaTutorFragment extends Fragment  {
         recycler = (RecyclerView) vista.findViewById(R.id.recyclerId1);
         recycler.setLayoutManager(new LinearLayoutManager(this.getContext()));
         consultarListaPersonas();
-       adapter= new perosonajeadapter(listaPersonaje);
+
+        adapter= new perosonajeadapter(listaPersonaje);
         recycler.setAdapter(adapter);
+
         btnabrir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -242,6 +245,8 @@ public class ListaTutorFragment extends Fragment  {
 */
     }
     public void consultarListaPersonas() {
+
+
         SQLiteDatabase db=conn.getReadableDatabase();
 
         personaje usuario=null;

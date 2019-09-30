@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Alumno.DetalleTutor"></activity>
+        <activity android:name=".Tutor.Perfil"
+            android:theme="@style/AppTheme.NoActionBar" ></activity>
+        <activity android:name=".Tutor.Horario" />
+        <activity android:name=".Alumno.DetalleTutor" />
         <activity
             android:name=".Tutor.InicioTutor"
             android:label="@string/title_activity_inicio_tutor" />
@@ -26,7 +29,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".Alumno.Principal"
-            android:label="@string/title_activity_principal" />
+            android:label="@string/title_activity_principal"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".Admin.PrincipalAdmin"
             android:label="@string/title_activity_principal_admin" />

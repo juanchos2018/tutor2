@@ -1,27 +1,23 @@
 package com.example.tutor2.Tutor;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.drawable.RoundedBitmapDrawable;
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.tutor2.R;
 
 public class TutorInico extends AppCompatActivity {
 
+    TextView code;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutor_inico);
+
+        code=(TextView)findViewById(R.id.idcodigoincioturor);
 
       /*  Drawable originalDrawable = getResources().getDrawable(R.drawable.ico1_1);
         Bitmap oriBitmap =((BitmapDrawable)originalDrawable).getBitmap();
@@ -38,11 +34,25 @@ public class TutorInico extends AppCompatActivity {
 
         switch (view.getId()){
             case R.id.idcar1:
-             //   this.deleteDatabase("bd_datos");
-           //     Toast.makeText(this, "hola  ", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(TutorInico.this,InicioTutor.class));
+
+              //  startActivity(new Intent(TutorInico.this,InicioTutor.class));
+                Intent intent= new Intent(TutorInico.this,InicioTutor.class);
+                Bundle bundle= new Bundle();
+                bundle.putString("code4",code.getText().toString());
+                intent.putExtras(bundle);
+                startActivity(intent);
+
+
+                break;
+            case R.id.idcar2:
+                Intent intent1 = new Intent(TutorInico.this, Horario.class);
+                startActivity(intent1);
+
                 break;
 
+            case R.id.idcar3:
+                Intent intent2 =new Intent(TutorInico.this,Perfil.class);
+                startActivity(intent2);
         }
     }
 }

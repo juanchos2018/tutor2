@@ -18,24 +18,33 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
         android:background="@color/celesteazul"
         android:orientation="horizontal"
-        android:gravity="center">
+            >
+     <ImageView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:src="@drawable/user2"
+         android:layout_marginLeft="5dp"
+         android:layout_gravity="center"/>
         <TextView
+            android:id="@+id/idnombreinciotutor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tutor "
+            android:text="Nombre de tutor"
             android:textColor="@color/color2"
-            android:textSize="40dp"
             android:textStyle="bold"
-            android:fontFamily="@string/title_dashboard"/>
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"/>
         <TextView
+            android:id="@+id/idcodigoincioturor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Parent"
-            android:textColor="@color/color2"
-            android:textSize="30dp"/>
+            android:text="2014049453"
+
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"/>
 
 
     </LinearLayout>
@@ -90,12 +99,13 @@
 
 
                 <androidx.cardview.widget.CardView
-
+                    android:id="@+id/idcar2"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginLeft="50dp"
                     app:cardCornerRadius="80dp"
                     app:cardBackgroundColor="@color/colorPrimary"
+                    android:onClick="onClick"
                     >
 
                     <RelativeLayout
@@ -143,12 +153,13 @@
 
 
                 <androidx.cardview.widget.CardView
-
+                    android:id="@+id/idcar3"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
                     android:layout_marginRight="10dp"
                     app:cardCornerRadius="80dp"
                     app:cardBackgroundColor="@color/colorPrimary"
+                    android:onClick="onClick"
                    >
 
                     <RelativeLayout
@@ -192,7 +203,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center">
+                android:gravity="center"
+                android:layout_marginBottom="10dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -320,7 +332,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"

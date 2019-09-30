@@ -55,7 +55,7 @@ public class PrincipalAdmin extends AppCompatActivity implements RegistrarTutorF
                     getSupportFragmentManager().beginTransaction().replace(R.id.idcontainerfragment,fragment1).commit();
                    return true;
                 case R.id.navigation_notifications:
-                    FragmentAgregar fragment2 = new FragmentAgregar();
+                    NotificacionFragment fragment2 = new NotificacionFragment();
 
                     Cargar(fragment2,fragmentManager);
                     return true;

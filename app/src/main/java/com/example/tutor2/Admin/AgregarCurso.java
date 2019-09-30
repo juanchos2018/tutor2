@@ -1,9 +1,14 @@
 package com.example.tutor2.Admin;
 
+import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.Image;
 import android.os.Bundle;
 
+import com.example.tutor2.Clases.cursotutor;
+import com.example.tutor2.Conexion.ConexionSQLiteHelper;
+import com.example.tutor2.Util.Utilidades;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -43,12 +48,15 @@ public class AgregarCurso extends AppCompatActivity {
     private ArrayAdapter adaperliscursos;
     private static final String[] ciclos = new String []{"1er Ciclo","2do Ciclo","3er Ciclo","4 Ciclo"};
 
+    ConexionSQLiteHelper conn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_curso);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        conn=new ConexionSQLiteHelper(this,"bd_datos",null,1);
 
         txtname=(TextView)findViewById(R.id.idnombrestutor);
         img=(ImageView)findViewById(R.id.idfototutor);
@@ -103,14 +111,20 @@ public class AgregarCurso extends AppCompatActivity {
 
                     }
                 })
-                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Agregar", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         String curso = spinnercursos.getSelectedItem().toString();
-                        Toast.makeText(AgregarCurso.this, "Hola"+curso, Toast.LENGTH_SHORT).show();
-                       Agregar(curso);
+                       // Toast.makeText(AgregarCurso.this, "Hola"+curso, Toast.LENGTH_SHORT).show();
+                        cursotutor o = new cursotutor();
+                        o.setCodigotutor(txtcode.getText().toString());
+                        o.setCurso(spinnercursos.getSelectedItem().toString());
+                       Agregar(o);
+                        mostrarlsiview(curso);
                     }
                 });
+
+
         spinnerciclo=view.findViewById(R.id.idcicloo);
         spinnercursos=view.findViewById(R.id.idcursos);
 
@@ -120,8 +134,20 @@ public class AgregarCurso extends AppCompatActivity {
         dialogo1.show();
     }
 
-    public void Agregar(String curso){
+    public  void mostrarlsiview(String curso){
         liscursos.add(curso);
         adaperliscursos.notifyDataSetChanged();
+    }
+    public void Agregar(cursotutor datos){
+        SQLiteDatabase db=conn.getWritableDatabase();
+
+        ContentValues values=new ContentValues();
+        values.put(Utilidades.CAMPO_CODIGO_TUTOR,datos.getCodigotutor());
+        values.put(Utilidades.CAMPO_CURSO,datos.getCurso());
+        db.insert(Utilidades.TABLA_TUTOR_CURSO,null,values);
+        Toast.makeText(this,"Registrado: ",Toast.LENGTH_SHORT).show();
+        db.close();
+    //    liscursos.add(curso);
+      //  adaperliscursos.notifyDataSetChanged();
     }
 }

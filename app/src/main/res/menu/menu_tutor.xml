@@ -9,7 +9,7 @@
     <item
         android:id="@+id/otro1"
         android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="Tutores" />
+        android:title="Cursos" />
 
     <item
         android:id="@+id/otro2"

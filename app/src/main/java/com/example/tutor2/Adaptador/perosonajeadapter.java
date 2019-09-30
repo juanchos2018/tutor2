@@ -77,8 +77,6 @@ public class perosonajeadapter extends RecyclerView.Adapter<perosonajeadapter.Vi
         holder.nombre.setText(listaPersonaje.get(position).getNombre());
         holder.ape.setText(listaPersonaje.get(position).getApellido());*/
 
-
-
         if (holder instanceof ViewHolderDatos){
             //  final Dato dato=
             final ViewHolderDatos datgolder =(ViewHolderDatos)holder;
@@ -142,6 +140,11 @@ public class perosonajeadapter extends RecyclerView.Adapter<perosonajeadapter.Vi
                             }
                             if (which==2){
                                 Intent intent= new Intent(datgolder.btnprueba.getContext(), VerCursos.class);
+                                Bundle bundle=  new Bundle();
+                                bundle.putString("name2",datgolder.nombre.getText().toString());
+                                bundle.putString("ape2",datgolder.apellidos);
+                                intent.putExtras(bundle);
+
                                 datgolder.btnprueba.getContext().startActivity(intent);
                             }
 
@@ -187,12 +190,12 @@ public class perosonajeadapter extends RecyclerView.Adapter<perosonajeadapter.Vi
 
                 codigo=(TextView)itemView.findViewById(R.id.idcodigo);
                 nombre=(TextView)itemView.findViewById(R.id.idnombre);
-              //   ape=(TextView)itemView.findViewById(R.id.idappp);
+                btnprueba=(Button)itemView.findViewById(R.id.btbclick);
+                //   ape=(TextView)itemView.findViewById(R.id.idappp);
 
 
-              //  telefono=(TextView)itemView.findViewById(R.id.idtelefono);
-          //      foto=(ImageView)itemView.findViewById(R.id.idfoto);
-              btnprueba=(Button)itemView.findViewById(R.id.btbclick);
+                //  telefono=(TextView)itemView.findViewById(R.id.idtelefono);
+                //      foto=(ImageView)itemView.findViewById(R.id.idfoto);
 
 
             }
